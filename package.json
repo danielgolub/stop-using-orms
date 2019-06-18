@@ -1,0 +1,24 @@
+{
+  "name": "stop-using-orms",
+  "version": "1.0.0",
+  "description": "## Getting started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:start": "docker-compose up -d",
+    "docker:stop": "docker-compose down"
+  },
+  "author": "Daniel Golub",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.1.0",
+    "knex": "^0.17.6",
+    "pg": "^7.11.0",
+    "sequelize": "^5.8.9"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
+}
