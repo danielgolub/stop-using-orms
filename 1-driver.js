@@ -7,13 +7,13 @@ client.connect();
 
 const query = `
   SELECT
-    category.name as "categoryName",
-    category."allowComments" as "allowComments",
-    "categoryItem".name AS "categoryItemName"
+    category.name,
+    category."allowComments",
+    "categoryItem".name
   FROM category
   LEFT JOIN "categoryItem" ON 
     "categoryItem"."categoryName" = category.name
-  WHERE "categoryName" = 'category-50000'`;
+  WHERE category.name = 'category-50000'`;
 console.log('executing query: ', query);
 
 client

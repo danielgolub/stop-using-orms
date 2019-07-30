@@ -12,17 +12,18 @@ $ npm run docker:start
 1. see that the query does a complex query, then add `required: false` to the include (see https://stackoverflow.com/questions/27561915/how-can-use-left-join-at-sequelize)
 2. now see that the query does not work, and uncomment second query
 3. now open up terminal and connect to postgres, then run each query with `explain analyze` prefix, for example:
-  ```bash
-  explain analyze
-    SELECT
-      category.name as "categoryName",
-      category."allowComments" as "allowComments",
-      "categoryItem".name AS "categoryItemName"
-    FROM category
-    LEFT JOIN "categoryItem" ON 
-      "categoryItem"."categoryName" = category.name
-    WHERE "categoryName" = 'category-50000';
-  ```
+    ```bash
+    explain analyze
+      SELECT
+        category.name as "categoryName",
+        category."allowComments" as "allowComments",
+        "categoryItem".name AS "categoryItemName"
+      FROM category
+      LEFT JOIN "categoryItem" ON 
+        "categoryItem"."categoryName" = category.name
+      WHERE "categoryName" = 'category-50000';
+    ```
+4. demonstrate sequelize join types limits: https://qph.fs.quoracdn.net/main-qimg-50f6f1dfe991352b56da854eede1e5ff
 
 #### Understanding Explain and Analyze
 * **costs** is measured in arbitrary unit of computation.

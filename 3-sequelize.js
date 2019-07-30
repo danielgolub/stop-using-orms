@@ -47,7 +47,6 @@ Category.findOne({
   attributes: ['name', 'allowComments'],
   include: [
     {
-      required: false,
       model: CategoryItem,
       where: {
         categoryName: 'category-50000',
@@ -61,25 +60,19 @@ Category.findOne({
   sequelize.close();
 });
 
-// CategoryItem.findAll({
-//   attributes: [
-//     'name',
-//   ],
+// Category.findOne({
+//   where: {
+//     name: 'category-50000',
+//   },
+//   attributes: ['name', 'allowComments'],
 //   include: [
 //     {
-//       model: Category,
-//       where: {
-//         name: 'category-50000',
-//       },
-//       attributes: [
-//         'name',
-//         'allowComments',
-//       ],
+//       model: CategoryItem,
+//       attributes: ['name'],
 //     },
 //   ],
-//   raw: true,
 // }).then((rows) => {
-//   console.log('query returned results: ', rows);
+//   console.log('query returned results: ', rows.toJSON());
 //
 //   sequelize.close();
 // });
